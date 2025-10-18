@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Brain, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const Navigation = () => {
@@ -22,11 +22,21 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="p-2 rounded-lg bg-gradient-primary">
-              <Brain className="w-5 h-5 text-primary-foreground" />
+            <div className="w-8 h-8">
+              <img
+                src="/logo.png?v=1"
+                alt="Nxg AI Labs"
+                className="w-full h-full object-contain"
+                loading="eager"
+                decoding="async"
+                onError={(e) => {
+                  const img = e.currentTarget as HTMLImageElement;
+                  img.src = '/placeholder.svg';
+                }}
+              />
             </div>
             <span className="font-bold text-lg bg-gradient-primary bg-clip-text text-transparent">
-              Neural Labs
+              Nxg AI Labs
             </span>
           </Link>
 

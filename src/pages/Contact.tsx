@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone, Instagram, Twitter } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
@@ -178,10 +178,10 @@ const Contact = () => {
                     <div>
                       <div className="font-semibold mb-1">Email</div>
                       <a
-                        href="mailto:hello@neurallabs.ai"
+                        href="mailto:NxgAILabs@gmail.com"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        hello@neurallabs.ai
+                        NxgAILabs@gmail.com
                       </a>
                     </div>
                   </div>
@@ -196,41 +196,37 @@ const Contact = () => {
                         href="tel:+1234567890"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        +1 (234) 567-890
+                        +91 70191 30206
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-primary-foreground flex-shrink-0">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold mb-1">Office</div>
-                      <p className="text-muted-foreground">
-                        123 AI Street<br />
-                        San Francisco, CA 94102
-                      </p>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
 
               <div className="p-8 rounded-2xl bg-card border border-border">
-                <h3 className="text-xl font-semibold mb-4">Business Hours</h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Monday - Friday</span>
-                    <span className="font-medium">9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Saturday</span>
-                    <span className="font-medium">10:00 AM - 4:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Sunday</span>
-                    <span className="font-medium">Closed</span>
-                  </div>
+                <h3 className="text-xl font-semibold mb-4">Connect on Socials</h3>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.instagram.com/nxg.ailabs/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-all"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://x.com/NAilabs71190"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-all"
+                    aria-label="Twitter"
+                  >
+                    <Twitter className="w-5 h-5" />
+                  </a>
+                  
                 </div>
               </div>
             </div>

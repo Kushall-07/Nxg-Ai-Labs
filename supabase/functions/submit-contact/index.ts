@@ -1,15 +1,32 @@
+// @ts-ignore - Deno URL import for Supabase Edge Functions
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+// @ts-ignore - Deno URL import for Supabase Edge Functions
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
+// @ts-ignore - Deno URL import for Supabase Edge Functions
 import { Resend } from "https://esm.sh/resend@4.0.0";
+// @ts-ignore - Deno URL import for Supabase Edge Functions
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+
+// Declare Deno for IDE TypeScript awareness (runtime provided by Deno)
+declare const Deno: any;
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type",
-};
+const allowedOrigins = new Set([
+  "https://nxgailabs.com",
+  "https://www.nxgailabs.com",
+  "http://localhost:5173",
+]);
+
+function getCors(origin: string | null): Record<string, string> {
+  const allowOrigin = origin && allowedOrigins.has(origin) ? origin : "";
+  return {
+    "Access-Control-Allow-Origin": allowOrigin,
+    "Vary": "Origin",
+    "Access-Control-Allow-Headers":
+      "authorization, x-client-info, apikey, content-type",
+  };
+}
 
 interface ContactSubmission {
   name: string;
@@ -39,6 +56,9 @@ function escapeHtml(text: string): string {
 }
 
 const handler = async (req: Request): Promise<Response> => {
+  const origin = req.headers.get("Origin");
+  const corsHeaders = getCors(origin);
+
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -89,9 +109,9 @@ const handler = async (req: Request): Promise<Response> => {
     // Send confirmation email to user (with escaped HTML to prevent XSS)
     try {
       const userEmailResponse = await resend.emails.send({
-        from: "Neural Labs AI <onboarding@resend.dev>",
+        from: "Nxg AI Labs <onboarding@resend.dev>",
         to: [email],
-        subject: "Thanks for contacting Neural Labs AI",
+        subject: "Thanks for contacting Nxg AI Labs",
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
             <h1 style="color: #00BFFF;">Thanks for reaching out, ${escapeHtml(name)}!</h1>
@@ -100,7 +120,7 @@ const handler = async (req: Request): Promise<Response> => {
               <h3 style="margin-top: 0;">Your message:</h3>
               <p>${escapeHtml(message)}</p>
             </div>
-            <p>Best regards,<br>The Neural Labs AI Team</p>
+            <p>Best regards,<br>The Nxg AI Labs Team</p>
           </div>
         `,
       });
@@ -113,7 +133,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification email to agency (with escaped HTML to prevent XSS)
     try {
       const notificationEmailResponse = await resend.emails.send({
-        from: "Neural Labs AI <onboarding@resend.dev>",
+        from: "Nxg AI Labs <onboarding@resend.dev>",
         to: ["nxgailabs@gmail.com"], // Your agency email
         subject: `New Contact Form Submission from ${escapeHtml(name)}`,
         html: `
@@ -144,10 +164,7 @@ const handler = async (req: Request): Promise<Response> => {
       }),
       {
         status: 200,
-        headers: {
-          "Content-Type": "application/json",
-          ...corsHeaders,
-        },
+        headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
   } catch (error: any) {

@@ -1,0 +1,26 @@
+.marquee {
+  white-space: nowrap;
+  animation: marquee-rtl 20s linear infinite;
+}
+
+.marqueeDelay {
+  white-space: nowrap;
+  animation: marquee-rtl 18s linear infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee,
+  .marqueeDelay {
+    animation: none !important;
+  }
+}

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Zap, Brain, TrendingUp } from "lucide-react";
+import styles from "./home-marquee.module.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -76,19 +77,24 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Metrics Band */}
-      <section className="py-12 border-y border-border bg-card/30 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {metrics.map((metric, index) => (
-              <div key={index} className="text-center space-y-2 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                  {metric.value}
-                </div>
-                <div className="text-muted-foreground">{metric.label}</div>
-              </div>
-            ))}
+      {/* Brand Marquee Band (replaces metrics) */}
+      <section className="py-6 border-y border-border bg-card/30 backdrop-blur-sm">
+        <div className="container mx-auto px-4 space-y-4">
+          {/* Line 1: Right-to-left */}
+          <div className="relative overflow-hidden">
+            <div className={`${styles.marquee} text-base md:text-xl font-bold italic text-white`}>
+              AI isn’t just a tool — it’s the new infrastructure of efficiency. It helps businesses think faster, act smarter, and work smoother.
+            </div>
           </div>
+
+          {/* Line 2: Right-to-left with delay */}
+          <div className="relative overflow-hidden">
+            <div className={`${styles.marqueeDelay} text-base md:text-xl font-bold italic text-white`}>
+              The future’s already here — it’s time to grab it before your competitors do.
+            </div>
+          </div>
+
+          
         </div>
       </section>
 

@@ -5,6 +5,48 @@ import { ExternalLink } from "lucide-react";
 const Work = () => {
   const projects = [
     {
+      title: "Intelligent Insights Agent",
+      client: "Enterprise AI",
+      category: "Analytics",
+      description:
+        "AI-powered workflow that connects Sheets, CRMs, web analytics, and email to deliver real-time business insights, detect anomalies, and automate decisions — acting as a personal data strategist for your clients.",
+      tags: ["Analytics", "Automation", "AI Agent", "Multi-source Data"],
+      results: {
+        metric1: "75%",
+        label1: "Faster Insight-to-Action",
+        metric2: "92%",
+        label2: "Anomaly Precision",
+      },
+    },
+    {
+      title: "Smart Support Agent",
+      client: "HelpDesk AI",
+      category: "Automation",
+      description:
+        "AI-powered workflow that classifies, drafts, and sends responses to support emails while learning from feedback to reduce manual effort and response time.",
+      tags: ["Gmail Workflow", "Vector Search", "Automation"],
+      results: {
+        metric1: "65%",
+        label1: "Faster First Response",
+        metric2: "45%",
+        label2: "Ticket Deflection",
+      },
+    },
+    {
+      title: "Invoice Intelligence System",
+      client: "FinSync",
+      category: "Automation",
+      description:
+        "Automates invoice extraction from Drive PDFs, syncs structured data to Google Sheets in real time, and triggers AI-generated email notifications for zero-touch finance ops.",
+      tags: ["OCR", "Automation", "AI Email", "Google Workspace"],
+      results: {
+        metric1: "94%",
+        label1: "Touchless Processing",
+        metric2: "99.2%",
+        label2: "Extraction Accuracy",
+      },
+    },
+    {
       title: "E-commerce AI Assistant",
       client: "RetailCo",
       category: "Chatbot",
