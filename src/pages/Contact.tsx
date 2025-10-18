@@ -95,6 +95,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    maxLength={100}
                     className="bg-card border-border focus:border-primary"
                     placeholder="John Doe"
                   />
@@ -111,6 +112,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    maxLength={255}
                     className="bg-card border-border focus:border-primary"
                     placeholder="john@company.com"
                   />
@@ -125,6 +127,7 @@ const Contact = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
+                    maxLength={100}
                     className="bg-card border-border focus:border-primary"
                     placeholder="Your Company"
                   />
@@ -140,6 +143,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    maxLength={2000}
                     className="bg-card border-border focus:border-primary min-h-[150px]"
                     placeholder="Tell us about your project..."
                   />
