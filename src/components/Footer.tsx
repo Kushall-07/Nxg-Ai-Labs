@@ -14,7 +14,7 @@ const Footer = () => {
                 <Brain className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="font-bold text-lg bg-gradient-primary bg-clip-text text-transparent">
-                Neural Labs
+                Nxg AI Labs
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
