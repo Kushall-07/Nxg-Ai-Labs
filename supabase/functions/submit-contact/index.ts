@@ -88,7 +88,7 @@ const handler = async (req: Request): Promise<Response> => {
     try {
       const notificationEmailResponse = await resend.emails.send({
         from: "Neural Labs AI <onboarding@resend.dev>",
-        to: ["hello@neurallabs.ai"], // Your agency email
+        to: ["nxgailabs@gmail.com"], // Your agency email
         subject: `New Contact Form Submission from ${name}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
