@@ -53,7 +53,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Navigation />
 
       <section className="pt-32 pb-20">
@@ -154,6 +154,12 @@ const Contact = () => {
                   size="lg"
                   disabled={isSubmitting}
                   className="w-full bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all disabled:opacity-50"
+                  onClick={() => {
+                    try {
+                      (window as any).gtag?.('event', 'cta_click', { location: 'contact_submit', text: 'Get AI-Readiness Assessment' });
+                    } catch {}
+                    console.info('CTA click', { location: 'contact_submit' });
+                  }}
                 >
                   {isSubmitting ? "Sending..." : "Get AI-Readiness Assessment"}
                 </Button>

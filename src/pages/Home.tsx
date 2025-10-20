@@ -32,7 +32,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Navigation />
 
       {/* Hero Section */}
@@ -62,7 +62,16 @@ const Home = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/contact">
-                <Button size="lg" className="w-full sm:w-auto bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all group px-8 py-6">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all group px-8 py-6"
+                  onClick={() => {
+                    try {
+                      (window as any).gtag?.('event', 'cta_click', { location: 'home_hero', text: 'Send Us Your Use-Case' });
+                    } catch {}
+                    console.info('CTA click', { location: 'home_hero' });
+                  }}
+                >
                   Send Us Your Use-Case
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -150,7 +159,16 @@ const Home = () => {
               Join innovative companies that are already leveraging AI to transform their operations and deliver exceptional experiences.
             </p>
             <Link to="/contact">
-              <Button size="lg" className="w-full sm:w-auto bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all px-8 py-6">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all px-8 py-6"
+                onClick={() => {
+                  try {
+                    (window as any).gtag?.('event', 'cta_click', { location: 'home_bottom', text: 'Get an AI-Readiness Assessment' });
+                  } catch {}
+                  console.info('CTA click', { location: 'home_bottom' });
+                }}
+              >
                 Get an AI-Readiness Assessment
               </Button>
             </Link>

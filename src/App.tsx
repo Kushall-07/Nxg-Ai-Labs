@@ -31,7 +31,15 @@ const App = () => (
         <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/90 backdrop-blur p-3">
           <div className="container mx-auto px-4">
             <Link to="/contact">
-              <Button className="w-full bg-gradient-primary text-primary-foreground font-semibold py-5">
+              <Button
+                className="w-full bg-gradient-primary text-primary-foreground font-semibold py-5"
+                onClick={() => {
+                  try {
+                    (window as any).gtag?.('event', 'cta_click', { location: 'sticky_mobile_cta', text: 'Get AI-Readiness Assessment' });
+                  } catch {}
+                  console.info('CTA click', { location: 'sticky_mobile_cta' });
+                }}
+              >
                 Get AI-Readiness Assessment
               </Button>
             </Link>

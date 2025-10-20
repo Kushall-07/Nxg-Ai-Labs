@@ -64,7 +64,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-24 md:pb-0">
       <Navigation />
 
       <section className="pt-32 pb-20">
@@ -190,7 +190,16 @@ const Services = () => {
               Let's discuss how AI can solve your specific challenges and unlock new opportunities.
             </p>
             <Link to="/contact">
-              <Button size="lg" className="bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all group">
+              <Button
+                size="lg"
+                className="bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all group"
+                onClick={() => {
+                  try {
+                    (window as any).gtag?.('event', 'cta_click', { location: 'services_cta', text: 'Get an AI-Readiness Assessment' });
+                  } catch {}
+                  console.info('CTA click', { location: 'services_cta' });
+                }}
+              >
                 Get an AI-Readiness Assessment
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
