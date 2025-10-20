@@ -62,13 +62,13 @@ const Home = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/contact">
-                <Button size="lg" className="bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all group">
+                <Button size="lg" className="w-full sm:w-auto bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all group px-8 py-6">
                   Send Us Your Use-Case
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link to="/work">
-                <Button size="lg" variant="outline" className="border-border hover:border-primary transition-colors">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-border hover:border-primary transition-colors px-8 py-6">
                   View Our Work
                 </Button>
               </Link>
@@ -150,7 +150,7 @@ const Home = () => {
               Join innovative companies that are already leveraging AI to transform their operations and deliver exceptional experiences.
             </p>
             <Link to="/contact">
-              <Button size="lg" className="bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all">
+              <Button size="lg" className="w-full sm:w-auto bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all px-8 py-6">
                 Get an AI-Readiness Assessment
               </Button>
             </Link>
