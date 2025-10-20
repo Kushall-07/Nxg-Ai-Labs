@@ -78,9 +78,9 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-bold mb-2">Send us a message</h2>
+                <h2 className="text-2xl font-bold mb-2">Send us your use-case</h2>
                 <p className="text-muted-foreground font-body">
-                  Fill out the form and we'll get back to you within 24 hours.
+                  Share your goals and current tools. We'll assess AI-readiness and respond within 24 hours.
                 </p>
               </div>
 
@@ -155,7 +155,7 @@ const Contact = () => {
                   disabled={isSubmitting}
                   className="w-full bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all disabled:opacity-50"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "Sending..." : "Get AI-Readiness Assessment"}
                 </Button>
               </form>
             </div>

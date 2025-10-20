@@ -84,6 +84,26 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Data Security, Integration & Support */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-xl bg-card border border-border">
+              <h3 className="text-xl font-semibold mb-2">Data Security & Privacy</h3>
+              <p className="text-muted-foreground font-body">We follow strict security practices and least-privilege access. Data is handled securely and only for the purposes you approve.</p>
+            </div>
+            <div className="p-6 rounded-xl bg-card border border-border">
+              <h3 className="text-xl font-semibold mb-2">Seamless Integration</h3>
+              <p className="text-muted-foreground font-body">We integrate with your existing tools and infrastructure to minimize disruption and maximize ROI.</p>
+            </div>
+            <div className="p-6 rounded-xl bg-card border border-border">
+              <h3 className="text-xl font-semibold mb-2">Ongoing Support</h3>
+              <p className="text-muted-foreground font-body">Post-deployment monitoring, updates, and optimization to ensure lasting performance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -171,7 +191,7 @@ const Services = () => {
             </p>
             <Link to="/contact">
               <Button size="lg" className="bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all group">
-                Schedule a Consultation
+                Get an AI-Readiness Assessment
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>

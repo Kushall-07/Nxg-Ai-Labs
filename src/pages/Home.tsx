@@ -63,7 +63,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/contact">
                 <Button size="lg" className="bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all group">
-                  Start Your Project
+                  Send Us Your Use-Case
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
@@ -151,7 +151,7 @@ const Home = () => {
             </p>
             <Link to="/contact">
               <Button size="lg" className="bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all">
-                Let's Talk About Your Project
+                Get an AI-Readiness Assessment
               </Button>
             </Link>
           </div>
