@@ -12,19 +12,24 @@ declare const Deno: any;
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
-const allowedOrigins = new Set([
-  "https://nxgailabs.com",
-  "https://www.nxgailabs.com",
-  "http://localhost:5173",
-]);
+function isAllowedOrigin(origin: string | null): boolean {
+  if (!origin) return false;
+  if (origin === "https://nxgailabs.com") return true;
+  if (origin === "https://www.nxgailabs.com") return true;
+  if (origin === "http://localhost:5173") return true;
+  // Allow Vercel preview and production domains
+  if (origin.endsWith('.vercel.app')) return true;
+  return false;
+}
 
 function getCors(origin: string | null): Record<string, string> {
-  const allowOrigin = origin && allowedOrigins.has(origin) ? origin : "";
+  const allowOrigin = isAllowedOrigin(origin) ? (origin as string) : "";
   return {
     "Access-Control-Allow-Origin": allowOrigin,
     "Vary": "Origin",
     "Access-Control-Allow-Headers":
       "authorization, x-client-info, apikey, content-type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
   };
 }
 
@@ -82,9 +87,19 @@ const handler = async (req: Request): Promise<Response> => {
 
     const { name, email, company, message } = validationResult.data;
 
-    // Initialize Supabase client
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    // Initialize Supabase client (support multiple env names; Supabase disallows secrets starting with SUPABASE_)
+    const supabaseUrl =
+      Deno.env.get("SB_URL") ||
+      Deno.env.get("SERVICE_URL") ||
+      Deno.env.get("SUPABASE_URL");
+    const supabaseKey =
+      Deno.env.get("SB_SERVICE_ROLE_KEY") ||
+      Deno.env.get("SERVICE_ROLE_KEY") ||
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error("Missing Supabase URL or Service Role key in function secrets");
+    }
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     // Save to database
