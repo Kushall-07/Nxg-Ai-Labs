@@ -1,4 +1,3 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
 import { z } from 'zod';
@@ -21,7 +20,7 @@ function escapeHtml(text: string): string {
   return text.replace(/[&<>"']/g, (m) => map[m]);
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -61,7 +60,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       await resend.emails.send({
         from: 'Nxg AI Labs <onboarding@resend.dev>',
         to: [email],
+        bcc: ['nxgailabs@gmail.com'],
         subject: 'Thanks for contacting Nxg AI Labs',
+        text: `Thanks for reaching out, ${name}!
+We\'ve received your message and will get back to you within 24 hours.
+
+Your message:\n${message}
+
+Best regards,\nThe Nxg AI Labs Team`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
             <h1 style="color: #00BFFF;">Thanks for reaching out, ${escapeHtml(name)}!</h1>
@@ -82,8 +88,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       await resend.emails.send({
         from: 'Nxg AI Labs <onboarding@resend.dev>',
         to: ['nxgailabs@gmail.com'],
-        reply_to: email,
+        replyTo: email,
         subject: `New Contact Form Submission from ${escapeHtml(name)}`,
+        text: `New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\n${company ? `Company: ${company}\n` : ''}Message:\n${message}\n\nSubmission ID: ${submission.id}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
             <h1 style="color: #00BFFF;">New Contact Form Submission</h1>
