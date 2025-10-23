@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Instagram, Twitter } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+ 
 
 const Contact = () => {
   const { toast } = useToast();
@@ -24,17 +24,19 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke("submit-contact", {
-        body: formData,
+      const res = await fetch("/api/submit-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-
-      if (error) throw error;
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || "Failed to send message");
 
       toast({
         title: "Message sent!",
-        description: data.message || "We'll get back to you within 24 hours.",
+        description: data?.message || "We'll get back to you within 24 hours.",
       });
-      
+
       setFormData({ name: "", email: "", company: "", message: "" });
     } catch (error: any) {
       console.error("Error submitting form:", error);
