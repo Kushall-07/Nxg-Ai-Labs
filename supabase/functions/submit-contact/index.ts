@@ -135,6 +135,7 @@ const handler = async (req: Request): Promise<Response> => {
       const notificationEmailResponse = await resend.emails.send({
         from: "Nxg AI Labs <onboarding@resend.dev>",
         to: ["nxgailabs@gmail.com"], // Your agency email
+        reply_to: email, // Allow replying directly to the client's email
         subject: `New Contact Form Submission from ${escapeHtml(name)}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
