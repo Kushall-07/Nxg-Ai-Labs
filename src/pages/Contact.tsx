@@ -109,52 +109,6 @@ const Contact = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-8">
-              <div className="p-8 rounded-2xl bg-card border border-border space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-6">Get in Touch</h3>
-                  <p className="text-muted-foreground font-body">
-                    Prefer to reach out directly? Here are other ways to connect with us.
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-primary-foreground flex-shrink-0">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold mb-1">Email</div>
-                      <a
-                        href="mailto:NxgAILabs@gmail.com"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        NxgAILabs@gmail.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-primary-foreground flex-shrink-0">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold mb-1">Phone</div>
-                      <a
-                        href="tel:+917019130206"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        +91 70191 30206
-                      </a>
-                    </div>
-                  </div>
-
-                  
-                </div>
-              </div>
-
-              
-            </div>
           </div>
         </div>
       </section>
