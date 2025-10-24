@@ -67,12 +67,12 @@ const Home = () => {
                   className="w-full sm:w-auto bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all group px-8 py-6"
                   onClick={() => {
                     try {
-                      (window as any).gtag?.('event', 'cta_click', { location: 'home_hero', text: 'Send Us Your Use-Case' });
+                      (window as any).gtag?.('event', 'cta_click', { location: 'home_hero', text: 'Contact Us' });
                     } catch {}
                     console.info('CTA click', { location: 'home_hero' });
                   }}
                 >
-                  Send Us Your Use-Case
+                  Contact Us
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
@@ -164,12 +164,12 @@ const Home = () => {
                 className="w-full sm:w-auto bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all px-8 py-6"
                 onClick={() => {
                   try {
-                    (window as any).gtag?.('event', 'cta_click', { location: 'home_bottom', text: 'Get an AI-Readiness Assessment' });
+                    (window as any).gtag?.('event', 'cta_click', { location: 'home_bottom', text: 'Contact Us' });
                   } catch {}
                   console.info('CTA click', { location: 'home_bottom' });
                 }}
               >
-                Get an AI-Readiness Assessment
+                Contact Us
               </Button>
             </Link>
           </div>

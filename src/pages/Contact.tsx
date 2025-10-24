@@ -86,86 +86,26 @@ const Contact = () => {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    Name *
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    maxLength={100}
-                    className="bg-card border-border focus:border-primary"
-                    placeholder="John Doe"
-                  />
+              <div className="space-y-6">
+                <div className="p-6 rounded-2xl bg-card border border-border">
+                  <h3 className="text-xl font-semibold mb-2">Wanna directly talk to us about your project?</h3>
+                  <a
+                    href="tel:+917019130206"
+                    className="inline-flex items-center gap-2 text-primary hover:underline"
+                  >
+                    <Phone className="w-4 h-4" /> +91 70191 30206
+                  </a>
                 </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email *
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    maxLength={255}
-                    className="bg-card border-border focus:border-primary"
-                    placeholder="john@company.com"
-                  />
+                <div className="p-6 rounded-2xl bg-card border border-border">
+                  <h3 className="text-xl font-semibold mb-2">Or just mail us — we'll get in touch ASAP</h3>
+                  <a
+                    href="mailto:NxgAILabs@gmail.com"
+                    className="inline-flex items-center gap-2 text-primary hover:underline"
+                  >
+                    <Mail className="w-4 h-4" /> NxgAILabs@gmail.com
+                  </a>
                 </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="company" className="text-sm font-medium">
-                    Company
-                  </label>
-                  <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    maxLength={100}
-                    className="bg-card border-border focus:border-primary"
-                    placeholder="Your Company"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    maxLength={2000}
-                    className="bg-card border-border focus:border-primary min-h-[150px]"
-                    placeholder="Tell us about your project..."
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-primary text-primary-foreground font-semibold hover:shadow-glow transition-all disabled:opacity-50"
-                  onClick={() => {
-                    try {
-                      (window as any).gtag?.('event', 'cta_click', { location: 'contact_submit', text: 'Get AI-Readiness Assessment' });
-                    } catch {}
-                    console.info('CTA click', { location: 'contact_submit' });
-                  }}
-                >
-                  {isSubmitting ? "Sending..." : "Get AI-Readiness Assessment"}
-                </Button>
-              </form>
+              </div>
             </div>
 
             {/* Contact Info */}
@@ -213,30 +153,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="p-8 rounded-2xl bg-card border border-border">
-                <h3 className="text-xl font-semibold mb-4">Connect on Socials</h3>
-                <div className="flex items-center gap-3">
-                  <a
-                    href="https://www.instagram.com/nxg.ailabs/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-all"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="https://x.com/NAilabs71190"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-all"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </a>
-                  
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
