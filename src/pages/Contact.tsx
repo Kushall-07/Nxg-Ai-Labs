@@ -76,7 +76,7 @@ const Contact = () => {
 
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="max-w-2xl mx-auto">
             {/* Contact Form */}
             <div className="space-y-8">
               <div>
@@ -95,9 +95,17 @@ const Contact = () => {
                   >
                     <Phone className="w-4 h-4" /> +91 70191 30206
                   </a>
+                  <div className="mt-2">
+                    <a
+                      href="tel:+919743590872"
+                      className="inline-flex items-center gap-2 text-primary hover:underline"
+                    >
+                      <Phone className="w-4 h-4" /> +91 97435 90872
+                    </a>
+                  </div>
                 </div>
                 <div className="p-6 rounded-2xl bg-card border border-border">
-                  <h3 className="text-xl font-semibold mb-2">Or just mail us — we'll get in touch ASAP</h3>
+                  <h3 className="text-xl font-semibold mb-2">Just mail us — we'll get in touch ASAP</h3>
                   <a
                     href="mailto:NxgAILabs@gmail.com"
                     className="inline-flex items-center gap-2 text-primary hover:underline"
