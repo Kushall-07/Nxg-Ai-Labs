@@ -57,13 +57,14 @@ export default async function handler(req: any, res: any) {
     }
 
     try {
-      await resend.emails.send({
+      console.log('[contact] sending client confirmation', { to: email });
+      const clientResp = await resend.emails.send({
         from: 'Nxg AI Labs <onboarding@resend.dev>',
         to: [email],
         bcc: ['nxgailabs@gmail.com'],
         subject: 'Thanks for contacting Nxg AI Labs',
         text: `Thanks for reaching out, ${name}!
-We\'ve received your message and will get back to you within 24 hours.
+We've received your message and will get back to you within 24 hours.
 
 Your message:\n${message}
 
@@ -80,12 +81,14 @@ Best regards,\nThe Nxg AI Labs Team`,
           </div>
         `,
       });
+      console.log('[contact] client email sent', { id: (clientResp as any)?.id || (clientResp as any)?.data?.id });
     } catch (e) {
       console.error('Email to client failed', e);
     }
 
     try {
-      await resend.emails.send({
+      console.log('[contact] sending team notification', { to: 'nxgailabs@gmail.com', replyTo: email });
+      const teamResp = await resend.emails.send({
         from: 'Nxg AI Labs <onboarding@resend.dev>',
         to: ['nxgailabs@gmail.com'],
         replyTo: email,
@@ -105,6 +108,7 @@ Best regards,\nThe Nxg AI Labs Team`,
           </div>
         `,
       });
+      console.log('[contact] team email sent', { id: (teamResp as any)?.id || (teamResp as any)?.data?.id });
     } catch (e) {
       console.error('Email to agency failed', e);
     }
