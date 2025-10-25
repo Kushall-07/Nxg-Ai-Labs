@@ -8,25 +8,25 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 4% 5%; /* #0C0C0D deep charcoal */
-    --foreground: 0 0% 92%;   /* #EAEAEA off-white */
+    --background: 240 6% 11%; /* #1A1A1D deep graphite */
+    --foreground: 0 0% 95%;   /* high-contrast off-white */
 
-    --card: 270 63% 9%;       /* #150926 black-plum shadow */
-    --card-foreground: 0 0% 92%;
+    --card: 240 4% 13%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 270 63% 9%;
-    --popover-foreground: 0 0% 92%;
+    --popover: 240 4% 13%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 18 96% 38%;    /* #BF3604 fiery orange */
+    --primary: 343 93% 40%;    /* #C3073F neon red-pink */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 9 97% 37%;   /* #BC1C03 deep red */
+    --secondary: 337 91% 31%;  /* #950740 hot magenta */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 270 25% 14%;
-    --muted-foreground: 215 14% 65%; /* #9CA3AF muted text */
+    --muted: 240 3% 18%;
+    --muted-foreground: 240 2% 31%; /* #4E4E50 subtle gray */
 
-    --accent: 18 96% 38%;
+    --accent: 345 54% 28%;     /* #6F2232 muted crimson */
     --accent-foreground: 0 0% 100%;
 
     /* Optional highlight tone */
@@ -35,9 +35,9 @@ All colors MUST be HSL.
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 92%;
 
-    --border: 0 0% 16%;       /* #2A2A2A */
-    --input: 0 0% 16%;
-    --ring: 18 96% 38%;
+    --border: 240 2% 31%;      /* #4E4E50 */
+    --input: 240 2% 31%;
+    --ring: 343 93% 40%;
 
     --radius: 1rem;
 
@@ -46,11 +46,11 @@ All colors MUST be HSL.
     --glass-border: 0 0% 100% / 0.12;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(18 96% 38%), hsl(9 97% 37%));
-    --gradient-radial: radial-gradient(circle at top right, hsl(18 96% 38% / 0.18), transparent 50%);
+    --gradient-primary: linear-gradient(135deg, hsl(343 93% 40%), hsl(337 91% 31%));
+    --gradient-radial: radial-gradient(circle at top right, hsl(343 93% 40% / 0.18), transparent 50%);
     
     /* Shadows */
-    --shadow-glow: 0 0 48px hsl(18 96% 38% / 0.35);
+    --shadow-glow: 0 0 48px hsl(343 93% 40% / 0.35);
     --shadow-card: 0 10px 30px hsl(0 0% 0% / 0.55);
     --shadow-card-hover: 0 20px 60px hsl(0 0% 0% / 0.65);
   }
