@@ -24,7 +24,7 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 100%;
 
     --muted: 240 3% 18%;
-    --muted-foreground: 240 2% 31%; /* #4E4E50 subtle gray */
+    --muted-foreground: 0 0% 95%; /* make sub-text white */
 
     --accent: 345 54% 28%;     /* #6F2232 muted crimson */
     --accent-foreground: 0 0% 100%;
