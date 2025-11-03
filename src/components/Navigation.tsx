@@ -35,7 +35,7 @@ const Navigation = () => {
                 }}
               />
             </div>
-            <span className="font-bold text-xl bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="font-bold text-xl text-white">
               NXG AI LABS
             </span>
           </Link>
