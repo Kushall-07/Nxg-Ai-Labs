@@ -21,10 +21,10 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 backdrop-blur-lg bg-background/80">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 flex items-center justify-center">
               <img
-                src="/logo.png?v=1"
+                src="/logo.png?v=2"
                 alt="Nxg AI Labs"
                 className="w-full h-full object-contain"
                 loading="eager"
@@ -35,8 +35,8 @@ const Navigation = () => {
                 }}
               />
             </div>
-            <span className="font-bold text-lg bg-gradient-primary bg-clip-text text-transparent">
-              Nxg AI Labs
+            <span className="font-bold text-xl bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+              NXG AI LABS
             </span>
           </Link>
 
