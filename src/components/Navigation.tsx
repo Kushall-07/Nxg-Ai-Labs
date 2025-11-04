@@ -35,7 +35,7 @@ const Navigation = () => {
                 }}
               />
             </div>
-            <span className="font-bold text-xl text-white">
+            <span className="font-bold text-xl text-black">
               NXG AI LABS
             </span>
           </Link>
