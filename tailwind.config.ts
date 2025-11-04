@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
+  darkMode: "class",
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
@@ -64,8 +64,8 @@ export default {
         'card-hover': 'var(--shadow-card-hover)',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-        body: ['DM Sans', 'ui-sans-serif', 'system-ui'],
+        sans: ['Morne', 'sans-serif'],
+        body: ['Morne', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
